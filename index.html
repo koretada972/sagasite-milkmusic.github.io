@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M!LKおすすめ楽曲診断</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>初心者さん向けM!LKおすすめ楽曲診断
+</h1>
+<p id="question">Q1. 「イイじゃん」「好きすぎて滅！」「アイドルパワー」<br>どれの気分？</p>
+
+<div id="choices">
+    <button onclick="selectChoice('A')">イイじゃん</button>
+    <button onclick="selectChoice('B')">好きすぎて滅！</button>
+    <button onclick="selectChoice('C')">アイドルパワー</button>
+</div>
+
+<script>
+    function selectChoice(choice) {
+        if (choice === 'A') {
+            document.getElementById('question').innerHTML = "Q2. ズバリ、トンチキを求めている";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('A1')">YES!!!</button>
+                <button onclick="selectChoice('A2')">そうでもないかな</button>
+            `;
+        }
+        if (choice === 'B') {
+            document.getElementById('question').innerHTML = "Q2. 今、恋(二次元orアイドルを含む)している";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('B1')">恋してる♡</button>
+                <button onclick="selectChoice('B2')">愛してる♡</button>
+            `;
+        }
+        if (choice === 'C') {
+            document.getElementById('question').innerHTML = "Q2. アイドルパワーの<br>キラキラした音が好きor元気をもらえる歌詞が好き";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('C1')">キラキラした音が好き</button>
+                <button onclick="selectChoice('C2')">元気をもらえる歌詞が好き</button>
+            `;
+        }
+
+        if (choice === 'A1') {
+            document.getElementById('question').innerHTML = "Q3.年下男子は可愛い";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('A1a')">可愛い！</button>
+                <button onclick="selectChoice('A1b')">かっこいい年上派かな</button>
+            `;
+        }
+         if (choice === 'A2') {
+            document.getElementById('question').innerHTML = "Q3.バチバチダンスでぶん殴られたい<br>or<br>艶やかパフォーマンスに脳を焼かれたい";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('A2a')">バチバチ楽曲</button>
+                <button onclick="selectChoice('A2b')">艶やか楽曲</button>
+            `;
+         }
+            if (choice === 'B1') {
+            document.getElementById('question').innerHTML = "Q3.恋愛において積極的なタイプだ";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('B1a')">自分から動くよ！</button>
+                <button onclick="selectChoice('B1b')">引っ込み思案かも…</button>
+            `;
+            }
+           if (choice === 'B2') {
+            document.getElementById('question').innerHTML = "Q3.正統派アイドル楽曲が好き";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('B2a')">王道こそ正義！</button>
+                <button onclick="selectChoice('B2b')">なんだかんだ好き滅が好き！</button>
+            `;
+           }
+            if (choice === 'C1') {
+            document.getElementById('question').innerHTML = "Q3.夏が好き？";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('C1a')">サマー最高大好き！</button>
+                <button onclick="selectChoice('C1b')">そこまででもないかな</button>
+            `;
+            }
+            if (choice === 'C2') {
+            document.getElementById('question').innerHTML = "Q3.実は今、三徹目だ";
+            document.getElementById('choices').innerHTML = `
+                <button onclick="selectChoice('C2a')">門外不出な顔のIt's me</button>
+                <button onclick="selectChoice('C2b')">しっかり８時間寝ました！</button>
+            `;
+            }
+
+            if (choice === 'A1a') {
+                showResult(
+                    ["コーヒーが飲めません","新学期アラカルト","夏味ランデブー","男子スイーツ部発足します"],
+                    ["サラブレッド御曹司CITY BOY"]
+
+
+                );
+            }
+   
+             if (choice === 'A1b') {
+                showResult(
+                   ["wan", "LUCKY CALL", "ジャングリズム", "行けたら行くよ"],
+                   ["MAGIC CARPET"]
+
+                );
+            }
+
+             if (choice === 'A2a') {
+                showResult(
+                    ["Bad Liar","Baffalo Shuffle","HIKARI","Over THe Storm"],
+                    ["energy"]
+
+                );
+            }
+
+             if (choice === 'A2b') {
+                showResult(
+                    ["Kiss Plan","labyrinth","君の知らない世界へ"],
+                    ["give you"]
+
+                );
+            }
+
+             if (choice === 'B1a') {
+                showResult(
+                    ["恋がはじまる","クレッシェンド","チラチLOVE"], 
+                    ["Love Drive",]
+
+                );
+            }
+
+            if (choice === 'B1b') {
+                showResult(
+                    ["テレパシー","かすかに君だった"],
+                    ["It'S only LOVE"]
+
+                );
+            } 
+
+            if (choice === 'B2a') {
+                showResult(
+                    ["Ribbon","topaz","ハピダン","夢路"],
+                    ["Goin'Down"]
+
+                );
+            }
+
+            if (choice === 'B2b') {
+                showResult(
+                    ["Amore～僕は君に愛を叫ぶ～","真・運命","君にズッキュン"],
+                    ["青春～珍道中～","Resplandor"]
+
+                );
+            }
+             if (choice === 'C1a') {
+                showResult(
+                    ["ブルーシャワー","アオノオト","奇跡が空に恋を響かせた","TOUCH THE SUN"],
+                    ["My treasure"]
+
+                );
+            }
+             if (choice === 'C1b') {
+                showResult(
+                    ["Aiシャンデリア","I CAN DRINK","白黒Brand New World"],
+                    ["秘密のパレード～誰もいない夢の街で～","リンガベル","Milky Snow"]
+
+                );
+            }
+             if (choice === 'C2a') {
+                showResult(
+                    ["エビバディグッジョブ","シアワシェイク","ジブンエール","愛と合図"],
+                    ["まちあわせ","さあ今日も一歩ずつ前へ"]
+
+                );
+            }
+             if (choice === 'C2b') {
+                showResult(
+                    ["テルネロファイター","フレ！フレ！オレ！","マッちょっちょ！","Bazai"],
+                    ["疾走ペンデュラム"]
+
+                );
+            }
+
+        function showResult(mainSongs,extraSongs, text,url) {
+        let songListHTML = "";
+        for(let i = 0; i < mainSongs.length; i++){
+            songListHTML += `<li>${mainSongs[i]}</li>`;
+        }
+        let extraHTML = "";
+        for (let i = 0; i < extraSongs.length; i++){
+            extraHTML += `<li>${extraSongs[i]}</li>`;
+        }
+    }
+
+function showResult(mainSongs,extraSongs) {
+
+    const randomSongs = [
+        "Sparkle",
+        "Feel Alive",
+        "ERA",
+        "INFINITY TRY",
+        "上昇思考クライマー",
+        "Brave Saga",
+        "ばいばい",
+        "ボクらなりレボリューション",
+        "コトノハ",
+        "パッパラ・シュビドゥ・ヴァァァァァァァ",
+         "Winding Road"
+    ];
+
+ const randomSong =
+        randomSongs[Math.floor(Math.random() * randomSongs.length)];
+
+ let mainHTML = "";
+ for (let i = 0; i < mainSongs.length; i++){
+    mainHTML += `<li>${mainSongs[i]}</li>`;
+ }
+
+ let extraHTML ="";
+ for (let i = 0; i < extraSongs.length; i++){
+    extraHTML +=`<li>${extraSongs[i]}</li>`;
+ }
+
+    document.getElementById('question').innerHTML = `
+        <h2>あなたへのおすすめは</h2>
+
+        <ul>${mainHTML}</ul>
+
+
+        <h3>これもおすすめ</h3>
+        <ul>${extraHTML}</ul>   
+
+        <hr>
+
+        <h3>今日の一曲</h3>
+        <p>${randomSong}</p>
+    `;
+    
+
+    document.getElementById('choices').innerHTML =
+        `<button onclick="location.reload()">もう一度診断する</button>`;
+        }
+    
+
+
+
+        }
+
+       
+
+    
+
+
+    
+</script>
+
+
+
+</body>
+
+</html>
