@@ -1,21 +1,16 @@
-@font-face{
+@font-face {
     font-family: "hanazome";
-    src: url("fonts/はなぞめフォント.ttf") format("truetype");
+    src: url("./fonts/hanazome.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: AozoraMilk;
-    src: url("fonts/AozoraMilk-R.otf") format("truetype");
-}
-
-@font-face {
-    font-family: craftmincho;
-    src: url("fonts/craftmincho.otf") format("truetype");
+    font-family: "craftmincho";
+    src: url("./fonts/craftmincho.otf") format("opentype");
 }
 
 
 body {
-    font-family: "",sans-serif;
+    font-family: "hanazome",sans-serif;
     background-color: #d8f3ff;
     max-width: 700px;
     margin: 0 auto;
