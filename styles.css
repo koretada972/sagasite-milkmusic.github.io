@@ -1,0 +1,108 @@
+@font-face{
+    font-family: "hanazome";
+    src: url("fonts/はなぞめフォント.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: AozoraMilk;
+    src: url("fonts/AozoraMilk-R.otf") format("truetype");
+}
+
+@font-face {
+    font-family: craftmincho;
+    src: url("fonts/craftmincho.otf") format("truetype");
+}
+
+
+body {
+    font-family: "",sans-serif;
+    background-color: #d8f3ff;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "craftmincho", sans-serif;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.line1,
+.line2 {
+    display: block;
+}
+
+.title {
+    font-family: "craftmincho", sans-serif;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.title span {
+    display: inline-block;
+    -webkit-text-stroke: 5px white;
+    paint-order: stroke fill;
+}
+
+#question {
+    font-family: "hanazome", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+button {
+    font-family: "hanazome", sans-serif;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 999px;
+
+    font-size: 1rem;
+
+    background-color: #ffeeb2;
+    cursor: pointer;
+}
+
+button:hover {
+    transform:scale(1.02);
+}
+
+.song-card {
+    min-width: 250px;
+    flex-shrink: 0;
+
+    background: #b7d7e5;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 0;
+
+    scroll-snap-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.song-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+
+    scroll-snap-type: x mandatory;
+}
+
+.song-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.song-card img{
+    width: 320px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+

@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<h1>初心者さん向けM!LKおすすめ楽曲診断
+<h1 class="title">
+    <span class="line1">初心者さん向け</span>
+    <span class="line2">M!LKおすすめ楽曲診断</span>
 </h1>
 <p id="question">Q1. 「イイじゃん」「好きすぎて滅！」「アイドルパワー」<br>どれの気分？</p>
 
@@ -18,7 +20,291 @@
     <button onclick="selectChoice('C')">アイドルパワー</button>
 </div>
 
+
 <script>
+
+const songs = {
+
+    "コーヒーが飲めません": {
+        videoId: "84AsL4blnQ4"
+    },
+
+     "夏味ランデブー": {
+        videoId: "ZV5hwVgOdJ4"
+    },
+
+     "新学期アラカルト": {
+        videoId: "nOgK-SYLJLE"
+    },
+
+     "男子スイーツ部発足します": {
+        videoId: "9i_D0xYiQdE"
+    },
+
+     "サラブレッド御曹司CITY BOY": {
+        videoId: "CBlwmZwPw9o"
+    },
+
+     "wan": {
+        videoId: "8lCcqIL8B20"
+    },
+
+     "LUCKY CALL": {
+        videoId: "dVMDWxIAAy8"
+    },
+
+     "行けたら行くよ": {
+        videoId: "VW37VhdaJCo"
+    },
+
+     "ジャングリズム": {
+        videoId: "NNg7W8a0bLQ"
+    },
+
+     "MAGIC CARPET": {
+        videoId: "nmXYc5kSGis"
+    },
+
+     "Buffalo Shuffle": {
+        videoId: "lE9JbPeSRzk"
+    },
+
+     "Bad Liar": {
+        videoId: "96U4_QLdVIk"
+    },
+
+     "HIKARI": {
+        videoId: "SLsl_HPR90w"
+    },
+
+     "Over The Storm": {
+        videoId: "p8IKA6WSDSg"
+    },
+
+     "energy": {
+        videoId: "h9Y1nYySKNQ"
+    },
+
+     "Kiss Plan": {
+        videoId: "SzwpFnpK7ZI"
+    },
+
+     "labyrinth": {
+        videoId: "z99j9LMsJ9o"
+    },
+
+     "君の知らない世界へ": {
+        videoId: "987XgTpMPg4"
+    },
+
+     "give you": {
+        videoId: "VU_jSyi4o1M"
+    },
+
+     "恋がはじまる": {
+        videoId: "kjBRICrZf40"
+    },
+
+     "クレッシェンド": {
+        videoId: "CoTmS4rMeSI"
+    },
+
+     "チラチLOVE": {
+        videoId: "2_81LgOwzw8"
+    },
+
+     "Love Drive": {
+        videoId: "3dIbHLd6Y-w"
+    },
+
+     "テレパシー": {
+        videoId: "QK3F8bn2a58"
+    },
+
+     "かすかに君だった": {
+        videoId: "kscenMf1JCg"
+    },
+
+     "It's onle LOVE": {
+        videoId: "nUYOyzBY4LY"
+    },
+
+     "Ribbon": {
+        videoId: "S3ptFcm1wXE"
+    },
+
+     "topaz": {
+        videoId: "85cS9zf7qdM"
+    },
+
+     "ハピダン": {
+        videoId: "cmIkXDf1dvQ"
+    },
+
+     "夢路": {
+        videoId: "eVuxu4UbWMU"
+    },
+
+     "Goin'Down": {
+        videoId: "n3j2xQSWvDE"
+    },
+
+    "Amore～僕は君に愛を叫ぶ～": {
+        videoId: "uJiN2fGUFNQ"
+    },
+
+    "真・運命": {
+        videoId: "dEEd9HHEQE0"
+    },
+
+     "君にズッキュン": {
+        videoId: "g1Ur498feGE"
+    },
+
+     "青春～珍道中～": {
+        videoId: "DXfCnoMbdn0"
+    },
+
+     "Resplandor": {
+        videoId: "BDAYQBfWqxs"
+    },
+
+     "ブルーシャワー": {
+        videoId: "OJLOqmz5IKE"
+    },
+
+     "アオノオト": {
+        videoId: "JyypMgU68e0"
+    },
+
+     "奇跡が空に恋を響かせた": {
+        videoId: "F0GOgkECNO8"
+    },
+
+     "TOUCH THE SUN": {
+        videoId: "BqgAyYvLXEc"
+    },
+
+     "My Treasure": {
+        videoId: "Cu27jSD0zr0"
+    },
+
+     "I CAN DRINK": {
+        videoId: "-jRvSkBdOMo"
+    },
+
+     "Aiシャンデリア": {
+        videoId: "yY3uCctzNNc"
+    },
+
+     "白黒Brand New World": {
+        videoId: "uUAu24EgcCM"
+    },
+
+     "リンガベル": {
+        videoId: "VxBqoDpOYbo"
+    },
+
+     "秘密のパレード～誰もいない夢の街で～": {
+        videoId: "u98inTJAZfc"
+    },
+
+     "Milky Snow": {
+        videoId: "GquPDyruk28"
+    },
+
+     "エビバディグッジョブ": {
+        videoId: "tfMPr2mIJXg"
+    },
+
+     "シアワシェイク": {
+        videoId: "9SLYEDt_HfI"
+    },
+
+     "ジブンエール": {
+        videoId: "wO9mogOfO7k"
+    },
+
+     "愛と合図": {
+        videoId: "K2Et3XnUWu8"
+    },
+
+     "まちあわせ": {
+        videoId: "ho9wjMrrmdQ"
+    },
+
+     "さあ今日も一歩ずつ前へ": {
+        videoId: "ay16v6Mf3j8"
+    },
+
+     "フレ！フレ！オレ！": {
+        videoId: "3zsD0tQMS78"
+    },
+
+     "テルネロファイター": {
+        videoId: "p4HtPeNHk60"
+    },
+
+     "マッちょっちょ！": {
+        videoId: "NQek60FkTUc"
+    },
+
+     "Banzai": {
+        videoId: "8-k_lYirS6Q"
+    },
+
+     "疾走ペンデュラム": {
+        videoId: "VFqxumPI51w"
+    },
+
+     "Sparkle": {
+        videoId: "YLRThH6ond0"
+    },
+
+     "ERA": {
+        videoId: "JQDCn4bROnw"
+    },
+
+     "Feel Alive": {
+        videoId: "DC5-jWxayFE"
+    },
+
+     "INFINITY TRY": {
+        videoId: "iou45QBC29s"
+    },
+
+     "上昇思考クライマー": {
+        videoId: "rxjpDUgEbIA"
+    },
+
+     "Brave Saga": {
+        videoId: "6e5aLbCwtB0"
+    },
+
+     "ばいばい": {
+        videoId: "ndLhhhg3ipU"
+    },
+
+     "ボクらなりレボリューション": {
+        videoId: "UcfVTU-W7cA"
+    },
+
+     "コトノハ": {
+        videoId: "eu7JIWpF4q0"
+    },
+
+     "パッパラ・シュビドゥ・ヴァァァァァァァ": {
+        videoId: "1UpnqgpN4CM"
+    },
+
+     "Winding Road": {
+        videoId: "GOntxVOHY68"
+    },
+
+};
+
+
+
     function selectChoice(choice) {
         if (choice === 'A') {
             document.getElementById('question').innerHTML = "Q2. ズバリ、トンチキを求めている";
@@ -104,7 +390,7 @@
 
              if (choice === 'A2a') {
                 showResult(
-                    ["Bad Liar","Baffalo Shuffle","HIKARI","Over THe Storm"],
+                    ["Bad Liar","Buffalo Shuffle","HIKARI","Over THe Storm"],
                     ["energy"]
 
                 );
@@ -129,7 +415,7 @@
             if (choice === 'B1b') {
                 showResult(
                     ["テレパシー","かすかに君だった"],
-                    ["It'S only LOVE"]
+                    ["It's only LOVE"]
 
                 );
             } 
@@ -152,7 +438,7 @@
              if (choice === 'C1a') {
                 showResult(
                     ["ブルーシャワー","アオノオト","奇跡が空に恋を響かせた","TOUCH THE SUN"],
-                    ["My treasure"]
+                    ["My Treasure"]
 
                 );
             }
@@ -177,17 +463,7 @@
 
                 );
             }
-
-        function showResult(mainSongs,extraSongs, text,url) {
-        let songListHTML = "";
-        for(let i = 0; i < mainSongs.length; i++){
-            songListHTML += `<li>${mainSongs[i]}</li>`;
         }
-        let extraHTML = "";
-        for (let i = 0; i < extraSongs.length; i++){
-            extraHTML += `<li>${extraSongs[i]}</li>`;
-        }
-    }
 
 function showResult(mainSongs,extraSongs) {
 
@@ -205,32 +481,116 @@ function showResult(mainSongs,extraSongs) {
          "Winding Road"
     ];
 
+ 
  const randomSong =
         randomSongs[Math.floor(Math.random() * randomSongs.length)];
 
- let mainHTML = "";
+ const randomSongData = songs[randomSong] || {
+        videoId: ""
+    }; 
+
+    const randomYoutubeUrl =
+        `https://www.youtube.com/watch?v=${randomSongData.videoId}`;
+
+    const randomThumbnailUrl =
+        `https://img.youtube.com/vi/${randomSongData.videoId}/hqdefault.jpg`;    
+
+     
+
+ let mainHTML = `<div class="song-scroll">`;
  for (let i = 0; i < mainSongs.length; i++){
-    mainHTML += `<li>${mainSongs[i]}</li>`;
+
+    const songData = songs[mainSongs[i]] ||{
+        videoId: ""
+    };
+
+    const youtubeUrl =
+    `https://www.youtube.com/watch?v=${songData.videoId}`;
+
+    const thumbnailUrl =
+    `https://img.youtube.com/vi/${songData.videoId}/hqdefault.jpg`;
+
+    mainHTML += `
+    <div class="song-card">
+
+        <a href="${youtubeUrl}" target="_blank">
+            <img src="${thumbnailUrl}"
+                 alt="${mainSongs[i]}">
+        </a>         
+
+        <h3>${mainSongs[i]}</h3>
+
+        <a href="${youtubeUrl}" target="_blank">
+            聴いてM!LK
+        </a>        
+    </div>
+    `;
  }
 
- let extraHTML ="";
+ mainHTML += `</div>`;
+
+
+ let extraHTML = `<div class="song-scroll">`;
  for (let i = 0; i < extraSongs.length; i++){
-    extraHTML +=`<li>${extraSongs[i]}</li>`;
+
+    const songData = songs[extraSongs[i]] ||{
+        videoId: ""
+    };
+
+    const youtubeUrl =
+    `https://www.youtube.com/watch?v=${songData.videoId}`;
+
+    const thumbnailUrl =
+    `https://img.youtube.com/vi/${songData.videoId}/hqdefault.jpg`;
+
+    extraHTML += `
+    <div class="song-card">
+
+        <a href="${youtubeUrl}" target="_blank">
+            <img src="${thumbnailUrl}"
+                 alt="${extraSongs[i]}">
+        </a>         
+
+        <h3>${extraSongs[i]}</h3>
+
+        <a href="${youtubeUrl}" target="_blank">
+            聴いてM!LK
+        </a>        
+    </div>
+    `;
  }
 
+ extraHTML += `</div>`;
+
+    
     document.getElementById('question').innerHTML = `
         <h2>あなたへのおすすめは</h2>
 
-        <ul>${mainHTML}</ul>
+        ${mainHTML}
 
 
         <h3>これもおすすめ</h3>
-        <ul>${extraHTML}</ul>   
+        ${extraHTML}  
 
         <hr>
 
         <h3>今日の一曲</h3>
-        <p>${randomSong}</p>
+
+        <div class="song-card">
+
+            <a href="${randomYoutubeUrl}" target="_blank">
+                <img src="${randomThumbnailUrl}"
+                alt="${randomSong}">
+            </a>
+
+            <h3>${randomSong}</h3>
+
+            <a href="${randomYoutubeUrl}" target="_blank">
+                聴いてM!LK
+            </a>
+
+        </div>    
+
     `;
     
 
@@ -241,7 +601,6 @@ function showResult(mainSongs,extraSongs) {
 
 
 
-        }
 
        
 
@@ -251,7 +610,30 @@ function showResult(mainSongs,extraSongs) {
     
 </script>
 
+<script>
+    const colors = [
+        "#ffbfcd",
+        "#ffd999",
+        "#72ace5",
+        "#f2ded5",
+        "#ff7f7f"
+    ];
+    document.querySelectorAll(".line1,.line2").forEach(line =>{
 
+        const text = line.textContent;
+        line.innerHTML ="";
+
+        [...text].forEach((char,index) => {
+            const span =document.createElement("span");
+
+            span.textContent = char;
+            span.style.color = colors[index % colors.length];
+
+            line.appendChild(span);
+        });
+    });
+
+</script>
 
 </body>
 
