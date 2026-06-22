@@ -10,7 +10,8 @@
 
 <h1 class="title">
     <span class="line1">初心者さん向け</span>
-    <span class="line2">M!LKおすすめ楽曲診断</span>
+    <span class="line2">M!LKおすすめ楽曲</span>
+    <span class="line3">診断</span>
 </h1>
 <p id="question">Q1. 「イイじゃん」「好きすぎて滅！」「アイドルパワー」<br>どれの気分？</p>
 
@@ -618,7 +619,7 @@ function showResult(mainSongs,extraSongs) {
         "#f2ded5",
         "#ff7f7f"
     ];
-    document.querySelectorAll(".line1,.line2").forEach(line =>{
+    document.querySelectorAll(".line1,.line2,.line3").forEach(line =>{
 
         const text = line.textContent;
         line.innerHTML ="";
