@@ -90,9 +90,7 @@ button:hover {
     scroll-snap-type: x mandatory;
 }
 
-.song-scroll::-webkit-scrollbar {
-    display: none;
-}
+
 
 .song-card img{
     width: 320px;
