@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "hanazome";
-    src: url("./fonts/hanazome.ttf") format("truetype");
+    font-family: "yusei";
+    src: url("fonts/YuseiMagic-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 
 body {
-    font-family: "hanazome",sans-serif;
+    font-family: "yusei",sans-serif;
     background-color: #d8f3ff;
     max-width: 700px;
     margin: 0 auto;
@@ -18,10 +18,19 @@ body {
 }
 
 h1 {
-    font-family: "craftmincho", sans-serif;
+    font-family: "yusei", sans-serif;
     text-align: center;
     font-size: 4rem;
 }
+
+h2,
+h3 {
+    font-family: "yusei", sans-serif;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+
 
 .line1,
 .line2,
@@ -42,13 +51,13 @@ h1 {
 }
 
 #question {
-    font-family: "hanazome", sans-serif;
+    font-family: "yusei", sans-serif;
     font-size: 1.2rem;
     text-align: center;
 }
 
 button {
-    font-family: "hanazome", sans-serif;
+    font-family: "yusei", sans-serif;
     display: block;
     width: 100%;
     margin: 10px 0;
