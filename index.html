@@ -294,7 +294,7 @@ const songs = {
         videoId: "eu7JIWpF4q0"
     },
 
-     "パッパラ・シュビドゥ・ヴァァァァァァァ": {
+     "パッパラシュビドゥヴァァァァァァァ": {
         videoId: "1UpnqgpN4CM"
     },
 
@@ -303,6 +303,29 @@ const songs = {
     },
 
 };
+
+const displayTitle = {
+            "サラブレッド御曹司CITY BOY":
+            "サラブレッド御曹司<br>CITY BOY",
+    
+            "秘密のパレード～誰もいない夢の街で～":
+            "秘密のパレード<br>～誰もいない夢の街で～",
+       
+            "Amore～僕は君に愛を叫ぶ～":
+            "Amore<br>～僕は君に愛を叫ぶ～",
+        
+            "奇跡が空に恋を響かせた":
+            "奇跡が空に<br>恋を響かせた",
+
+            "ボクらなりレボリューション":
+            "ボクらなり<br>レボリューション",
+  
+            "パッパラシュビドゥヴァァァァァァァ":
+            "パッパラ<br>シュビドゥ<br>ヴァァァァァァァ",
+
+
+};
+
 
 function changeQuestion(text) {
     const question = document.getElementById('question');
@@ -537,7 +560,7 @@ function showResult(mainSongs,extraSongs) {
         "ばいばい",
         "ボクらなりレボリューション",
         "コトノハ",
-        "パッパラ・シュビドゥ・ヴァァァァァァァ",
+        "パッパラシュビドゥヴァァァァァァァ",
          "Winding Road"
     ];
 
@@ -548,6 +571,9 @@ function showResult(mainSongs,extraSongs) {
  const randomSongData = songs[randomSong] || {
         videoId: ""
     }; 
+
+ const randomDisplayTitle =   
+     displayTitle[randomSong] || randomSong;
 
     const randomYoutubeUrl =
         `https://www.youtube.com/watch?v=${randomSongData.videoId}`;
@@ -564,6 +590,10 @@ function showResult(mainSongs,extraSongs) {
         videoId: ""
     };
 
+    const songDisplayTitle =
+        displayTitle[mainSongs[i]] || mainSongs[i];
+
+    
     const youtubeUrl =
     `https://www.youtube.com/watch?v=${songData.videoId}`;
 
@@ -578,7 +608,7 @@ function showResult(mainSongs,extraSongs) {
                  alt="${mainSongs[i]}">
         </a>         
 
-        <h3>${mainSongs[i]}</h3>
+        <h3>${songDisplayTitle}</h3>
 
         <a href="${youtubeUrl}" target="_blank">
             聴いてM!LK
@@ -597,6 +627,10 @@ function showResult(mainSongs,extraSongs) {
         videoId: ""
     };
 
+    const songDisplayTitle =
+        displayTitle[extraSongs[i]] || extraSongs[i];
+
+
     const youtubeUrl =
     `https://www.youtube.com/watch?v=${songData.videoId}`;
 
@@ -611,7 +645,7 @@ function showResult(mainSongs,extraSongs) {
                  alt="${extraSongs[i]}">
         </a>         
 
-        <h3>${extraSongs[i]}</h3>
+        <h3>${songDisplayTitle}</h3>
 
         <a href="${youtubeUrl}" target="_blank">
             聴いてM!LK
@@ -636,20 +670,22 @@ function showResult(mainSongs,extraSongs) {
 
         <h3>今日の一曲</h3>
 
-        <div class="song-card">
+        <div class="song-scroll">
+            <div class="song-card">
 
             <a href="${randomYoutubeUrl}" target="_blank">
                 <img src="${randomThumbnailUrl}"
                 alt="${randomSong}">
             </a>
 
-            <h3>${randomSong}</h3>
+            <h3>${randomDisplayTitle}</h3>
 
             <a href="${randomYoutubeUrl}" target="_blank">
                 聴いてM!LK
             </a>
 
-        </div>    
+            </div>
+        </div>     
 
     `;
     
